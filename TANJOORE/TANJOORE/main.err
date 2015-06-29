@@ -1,0 +1,8 @@
+>>> Warning 203 "D:\Parthiban\Working\Droid_Hash\Lumian Code\TANJOORE\TANJOORE\ds1307.c" Line 20(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 60(1,1): Condition always TRUE
+>>> Warning 202 "main.c" Line 27(6,9): Variable never used:   shh
+>>> Warning 202 "main.c" Line 27(13,16): Variable never used:   smm
+>>> Warning 202 "main.c" Line 27(20,23): Variable never used:   ehh
+>>> Warning 202 "main.c" Line 27(27,30): Variable never used:   emm
+      Memory usage:   ROM=7%      RAM=4% - 6%
+      0 Errors,  6 Warnings.

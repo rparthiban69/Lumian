@@ -1,0 +1,101 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+005     PORTA
+006     PORTB
+006.5   toggle_sw
+006.6   mode_SW1
+006.7   mode_SW2
+007     PORTC
+008     PSP_DATA
+008     PORTD
+008.3   relay
+009     PORTE
+015     CCP_1_HIGH
+015     CCP_1
+015     CCP_1_LOW
+01B     CCP_2_LOW
+01B     CCP_2
+01B     CCP_2_HIGH
+020     @TRIS_C
+021     shh
+022     smm
+023     ehh
+024     emm
+025     MAIN.hr
+026     MAIN.min
+027     MAIN.sec
+028     ds1307_init.seconds
+028     ds1307_get_time.@SCRATCH1
+028     MAIN.@SCRATCH1
+029     bin2bcd.binary_value
+029     @delay_ms1.P1
+029     ds1307_init.@SCRATCH1
+029     MAIN.@SCRATCH2
+02A     bin2bcd.temp
+02B     @I2C_WRITE_1.P1
+02B     @I2C_READ_1.P2
+02B     bin2bcd.retval
+02C     bcd2bin.bcd_value
+02C     @I2C_READ_1.@SCRATCH1
+02D     bcd2bin.temp
+02D     @I2C_READ_1.@SCRATCH2
+02E     bcd2bin.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+085     TRISA
+086     TRISB
+087     TRISC
+088     TRISD
+089     TRISE
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0177  @delay_ms1
+004E  @I2C_READ_1
+0004  @I2C_WRITE_1
+0124  bin2bcd
+0093  bcd2bin
+00A6  ds1307_init
+01B3  ds1307_get_time
+018C  MAIN
+018C  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    D:\Parthiban\Working\Droid_Hash\Lumian Code\TANJOORE\TANJOORE\
+
+Project Files:
+    main.c
+    C:\Program Files\PICC\devices\16f877a.h
+    ds1307.c
+
+Units:
+    D:\Parthiban\Working\Droid_Hash\Lumian Code\TANJOORE\TANJOORE\main.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.sta

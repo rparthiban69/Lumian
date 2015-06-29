@@ -1,0 +1,53 @@
+
+ROM used: 612 (7%)
+          612 (7%) including unused fragments
+
+          1 Average locations per line
+          5 Average locations per statement
+
+RAM used: 16 (4%) at main() level
+          21 (6%) worst case
+
+Stack used: 2 worst case (out of 8 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  106    41  32  main.c
+  310     0   0  C:\Program Files\PICC\devices\16f877a.h
+  155    86  68  ds1307.c
+----- -----
+  571   127 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   3   1             @delay_ms1
+0     69  11   3             @I2C_READ_1
+0     74  12   1             @I2C_WRITE_1
+ Inline        3   242  5.7  bin2bcd
+0     19   3   3   155  4.7  bcd2bin
+0    209  34   2   437  2.4  ds1307_init
+ Inline        4   315  3.0  ds1307_get_time
+0    216  35   5  1171  6.3  MAIN
+
+Program metrics:
+    Functions               5
+    Statements              127
+    Comments                133
+    Volume (V)              3164
+    Difficilty (D)          21.9
+    Effort to implement (E) 69237
+    Time to implement (T)   1 hours, 4 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   9
+    Maintainability (MI)    134
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   608  1436  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

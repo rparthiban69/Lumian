@@ -1,0 +1,29 @@
+ÀÄmain
+   ÀÄMAIN  0/216  Ram=5
+      ÃÄ??0??
+      ÃÄds1307_init  0/209  Ram=2
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ÃÄbcd2bin  0/19  Ram=3
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄbin2bcd  (Inline)  Ram=3
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÀÄ@I2C_WRITE_1  0/74  Ram=1
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄds1307_get_time  (Inline)  Ram=4
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/74  Ram=1
+      ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ÃÄbcd2bin  0/19  Ram=3
+      ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ÃÄbcd2bin  0/19  Ram=3
+      ³  ÃÄ@I2C_READ_1  0/69  Ram=3
+      ³  ÀÄbcd2bin  0/19  Ram=3
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1

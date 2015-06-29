@@ -1,0 +1,897 @@
+CCS PCM C Compiler, Version 4.093, 5967               18-Apr-14 20:44
+
+               Filename: D:\Parthiban\Working\Droid_Hash\Lumian Code\TANJOORE\TANJOORE\main.lst
+
+               ROM used: 612 words (7%)
+                         Largest free fragment is 2048
+               RAM used: 16 (4%) at main() level
+                         21 (6%) worst case
+               Stack:    2 locations
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   18C
+0003:  NOP
+.................... #include <16f877a.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #FUSES XT,protect                         //Crystal osc <= 4mhz 
+....................  
+.................... #use delay(clock=4000000) 
+*
+0177:  MOVLW  29
+0178:  MOVWF  04
+0179:  BCF    03.7
+017A:  MOVF   00,W
+017B:  BTFSC  03.2
+017C:  GOTO   18B
+017D:  MOVLW  01
+017E:  MOVWF  78
+017F:  CLRF   77
+0180:  DECFSZ 77,F
+0181:  GOTO   180
+0182:  DECFSZ 78,F
+0183:  GOTO   17F
+0184:  MOVLW  4A
+0185:  MOVWF  77
+0186:  DECFSZ 77,F
+0187:  GOTO   186
+0188:  GOTO   189
+0189:  DECFSZ 00,F
+018A:  GOTO   17D
+018B:  RETLW  00
+.................... //!#include "lcd.c" 
+.................... #include <ds1307.c> 
+.................... //************************************WORKING PROGRAM************************************** 
+....................  
+....................  
+.................... #define RTC_SDA  PIN_C4 
+.................... #define RTC_SCL  PIN_C3 
+....................  
+.................... #use i2c(master, sda=RTC_SDA, scl=RTC_SCL) 
+*
+0004:  MOVLW  08
+0005:  MOVWF  78
+0006:  NOP
+0007:  BCF    07.3
+0008:  BCF    20.3
+0009:  MOVF   20,W
+000A:  BSF    03.5
+000B:  MOVWF  07
+000C:  NOP
+000D:  BCF    03.5
+000E:  RLF    2B,F
+000F:  BCF    07.4
+0010:  BTFSS  03.0
+0011:  GOTO   018
+0012:  BSF    20.4
+0013:  MOVF   20,W
+0014:  BSF    03.5
+0015:  MOVWF  07
+0016:  GOTO   01C
+0017:  BCF    03.5
+0018:  BCF    20.4
+0019:  MOVF   20,W
+001A:  BSF    03.5
+001B:  MOVWF  07
+001C:  NOP
+001D:  BCF    03.5
+001E:  BSF    20.3
+001F:  MOVF   20,W
+0020:  BSF    03.5
+0021:  MOVWF  07
+0022:  BCF    03.5
+0023:  BTFSS  07.3
+0024:  GOTO   023
+0025:  DECFSZ 78,F
+0026:  GOTO   006
+0027:  NOP
+0028:  BCF    07.3
+0029:  BCF    20.3
+002A:  MOVF   20,W
+002B:  BSF    03.5
+002C:  MOVWF  07
+002D:  NOP
+002E:  BCF    03.5
+002F:  BSF    20.4
+0030:  MOVF   20,W
+0031:  BSF    03.5
+0032:  MOVWF  07
+0033:  NOP
+0034:  NOP
+0035:  BCF    03.5
+0036:  BSF    20.3
+0037:  MOVF   20,W
+0038:  BSF    03.5
+0039:  MOVWF  07
+003A:  BCF    03.5
+003B:  BTFSS  07.3
+003C:  GOTO   03B
+003D:  CLRF   78
+003E:  NOP
+003F:  BTFSC  07.4
+0040:  BSF    78.0
+0041:  BCF    07.3
+0042:  BCF    20.3
+0043:  MOVF   20,W
+0044:  BSF    03.5
+0045:  MOVWF  07
+0046:  BCF    03.5
+0047:  BCF    07.4
+0048:  BCF    20.4
+0049:  MOVF   20,W
+004A:  BSF    03.5
+004B:  MOVWF  07
+004C:  BCF    03.5
+004D:  RETLW  00
+004E:  MOVLW  08
+004F:  MOVWF  2C
+0050:  MOVF   77,W
+0051:  MOVWF  2D
+0052:  BSF    20.4
+0053:  MOVF   20,W
+0054:  BSF    03.5
+0055:  MOVWF  07
+0056:  NOP
+0057:  BCF    03.5
+0058:  BSF    20.3
+0059:  MOVF   20,W
+005A:  BSF    03.5
+005B:  MOVWF  07
+005C:  BCF    03.5
+005D:  BTFSS  07.3
+005E:  GOTO   05D
+005F:  BTFSC  07.4
+0060:  BSF    03.0
+0061:  BTFSS  07.4
+0062:  BCF    03.0
+0063:  RLF    78,F
+0064:  NOP
+0065:  BCF    20.3
+0066:  MOVF   20,W
+0067:  BSF    03.5
+0068:  MOVWF  07
+0069:  BCF    03.5
+006A:  BCF    07.3
+006B:  DECFSZ 2C,F
+006C:  GOTO   052
+006D:  BSF    20.4
+006E:  MOVF   20,W
+006F:  BSF    03.5
+0070:  MOVWF  07
+0071:  NOP
+0072:  BCF    03.5
+0073:  BCF    07.4
+0074:  MOVF   2D,W
+0075:  BTFSC  03.2
+0076:  GOTO   07C
+0077:  BCF    20.4
+0078:  MOVF   20,W
+0079:  BSF    03.5
+007A:  MOVWF  07
+007B:  BCF    03.5
+007C:  NOP
+007D:  BSF    20.3
+007E:  MOVF   20,W
+007F:  BSF    03.5
+0080:  MOVWF  07
+0081:  BCF    03.5
+0082:  BTFSS  07.3
+0083:  GOTO   082
+0084:  NOP
+0085:  BCF    07.3
+0086:  BCF    20.3
+0087:  MOVF   20,W
+0088:  BSF    03.5
+0089:  MOVWF  07
+008A:  NOP
+008B:  BCF    03.5
+008C:  BCF    07.4
+008D:  BCF    20.4
+008E:  MOVF   20,W
+008F:  BSF    03.5
+0090:  MOVWF  07
+0091:  BCF    03.5
+0092:  RETLW  00
+.................... BYTE bin2bcd(BYTE binary_value); 
+.................... BYTE bcd2bin(BYTE bcd_value); 
+....................  
+.................... int8 bin2bcd(int8 binary_value) 
+.................... { 
+....................   int8 temp; 
+....................   char retval; 
+....................  
+....................   temp = binary_value; 
+*
+0124:  MOVF   29,W
+0125:  MOVWF  2A
+....................   retval = 0; 
+0126:  CLRF   2B
+....................  
+....................   while(1) 
+....................   { 
+....................     // Get the tens digit by doing multiple subtraction 
+....................     // of 10 from the binary value. 
+....................     if(temp >= 10) 
+0127:  MOVF   2A,W
+0128:  SUBLW  09
+0129:  BTFSC  03.0
+012A:  GOTO   130
+....................     { 
+....................       temp -= 10; 
+012B:  MOVLW  0A
+012C:  SUBWF  2A,F
+....................       retval += 0x10; 
+012D:  MOVLW  10
+012E:  ADDWF  2B,F
+....................     } 
+....................     else // Get the ones digit by adding the remainder. 
+012F:  GOTO   133
+....................     { 
+....................       retval += temp; 
+0130:  MOVF   2A,W
+0131:  ADDWF  2B,F
+....................       break; 
+0132:  GOTO   134
+....................     } 
+....................   } 
+0133:  GOTO   127
+....................  
+....................   return(retval); 
+0134:  MOVF   2B,W
+0135:  MOVWF  78
+.................... } 
+....................  
+.................... // Input range - 00 to 99. 
+.................... char bcd2bin(char bcd_value) 
+.................... { 
+....................   char temp; 
+....................  
+....................   temp = bcd_value; 
+*
+0093:  MOVF   2C,W
+0094:  MOVWF  2D
+....................   // Shifting upper digit right by 1 is same as multiplying by 8. 
+....................   temp >>= 1; 
+0095:  BCF    03.0
+0096:  RRF    2D,F
+....................   // Isolate the bits for the upper digit. 
+....................   temp &= 0x78; 
+0097:  MOVLW  78
+0098:  ANDWF  2D,F
+....................  
+....................   // Now return: (Tens * 8) + (Tens * 2) + Ones 
+....................  
+....................   return(temp + (temp >> 2) + (bcd_value & 0x0f)); 
+0099:  RRF    2D,W
+009A:  MOVWF  77
+009B:  RRF    77,F
+009C:  MOVLW  3F
+009D:  ANDWF  77,F
+009E:  MOVF   77,W
+009F:  ADDWF  2D,W
+00A0:  MOVWF  2E
+00A1:  MOVF   2C,W
+00A2:  ANDLW  0F
+00A3:  ADDWF  2E,W
+00A4:  MOVWF  78
+.................... } 
+00A5:  RETLW  00
+....................  
+.................... void ds1307_init(void) 
+.................... { 
+....................    BYTE seconds = 0; 
+00A6:  CLRF   28
+....................  
+....................    i2c_start(); 
+00A7:  BSF    20.4
+00A8:  MOVF   20,W
+00A9:  BSF    03.5
+00AA:  MOVWF  07
+00AB:  NOP
+00AC:  BCF    03.5
+00AD:  BSF    20.3
+00AE:  MOVF   20,W
+00AF:  BSF    03.5
+00B0:  MOVWF  07
+00B1:  NOP
+00B2:  BCF    03.5
+00B3:  BCF    07.4
+00B4:  BCF    20.4
+00B5:  MOVF   20,W
+00B6:  BSF    03.5
+00B7:  MOVWF  07
+00B8:  NOP
+00B9:  BCF    03.5
+00BA:  BCF    07.3
+00BB:  BCF    20.3
+00BC:  MOVF   20,W
+00BD:  BSF    03.5
+00BE:  MOVWF  07
+....................    i2c_write(0xD0);      // WR to RTC 
+00BF:  MOVLW  D0
+00C0:  BCF    03.5
+00C1:  MOVWF  2B
+00C2:  CALL   004
+....................    i2c_write(0x00);      // REG 0 
+00C3:  CLRF   2B
+00C4:  CALL   004
+....................    i2c_start(); 
+00C5:  BSF    20.4
+00C6:  MOVF   20,W
+00C7:  BSF    03.5
+00C8:  MOVWF  07
+00C9:  NOP
+00CA:  BCF    03.5
+00CB:  BSF    20.3
+00CC:  MOVF   20,W
+00CD:  BSF    03.5
+00CE:  MOVWF  07
+00CF:  NOP
+00D0:  BCF    03.5
+00D1:  BTFSS  07.3
+00D2:  GOTO   0D1
+00D3:  BCF    07.4
+00D4:  BCF    20.4
+00D5:  MOVF   20,W
+00D6:  BSF    03.5
+00D7:  MOVWF  07
+00D8:  NOP
+00D9:  BCF    03.5
+00DA:  BCF    07.3
+00DB:  BCF    20.3
+00DC:  MOVF   20,W
+00DD:  BSF    03.5
+00DE:  MOVWF  07
+....................    i2c_write(0xD1);      // RD from RTC 
+00DF:  MOVLW  D1
+00E0:  BCF    03.5
+00E1:  MOVWF  2B
+00E2:  CALL   004
+....................    seconds = bcd2bin(i2c_read(0)); // Read current "seconds" in DS1307 
+00E3:  CLRF   77
+00E4:  CALL   04E
+00E5:  MOVF   78,W
+00E6:  MOVWF  29
+00E7:  MOVWF  2C
+00E8:  CALL   093
+00E9:  MOVF   78,W
+00EA:  MOVWF  28
+....................    i2c_stop(); 
+00EB:  BCF    20.4
+00EC:  MOVF   20,W
+00ED:  BSF    03.5
+00EE:  MOVWF  07
+00EF:  NOP
+00F0:  BCF    03.5
+00F1:  BSF    20.3
+00F2:  MOVF   20,W
+00F3:  BSF    03.5
+00F4:  MOVWF  07
+00F5:  BCF    03.5
+00F6:  BTFSS  07.3
+00F7:  GOTO   0F6
+00F8:  NOP
+00F9:  GOTO   0FA
+00FA:  NOP
+00FB:  BSF    20.4
+00FC:  MOVF   20,W
+00FD:  BSF    03.5
+00FE:  MOVWF  07
+00FF:  NOP
+....................    seconds &= 0x7F; 
+0100:  BCF    03.5
+0101:  BCF    28.7
+....................  
+....................    delay_us(3); 
+0102:  GOTO   103
+0103:  NOP
+....................  
+....................    i2c_start(); 
+0104:  BSF    20.4
+0105:  MOVF   20,W
+0106:  BSF    03.5
+0107:  MOVWF  07
+0108:  NOP
+0109:  BCF    03.5
+010A:  BSF    20.3
+010B:  MOVF   20,W
+010C:  BSF    03.5
+010D:  MOVWF  07
+010E:  NOP
+010F:  BCF    03.5
+0110:  BCF    07.4
+0111:  BCF    20.4
+0112:  MOVF   20,W
+0113:  BSF    03.5
+0114:  MOVWF  07
+0115:  NOP
+0116:  BCF    03.5
+0117:  BCF    07.3
+0118:  BCF    20.3
+0119:  MOVF   20,W
+011A:  BSF    03.5
+011B:  MOVWF  07
+....................    i2c_write(0xD0);      // WR to RTC 
+011C:  MOVLW  D0
+011D:  BCF    03.5
+011E:  MOVWF  2B
+011F:  CALL   004
+....................    i2c_write(0x00);      // REG 0 
+0120:  CLRF   2B
+0121:  CALL   004
+....................    i2c_write(bin2bcd(seconds));     // Start oscillator with current "seconds value 
+0122:  MOVF   28,W
+0123:  MOVWF  29
+*
+0136:  MOVF   78,W
+0137:  MOVWF  29
+0138:  MOVWF  2B
+0139:  CALL   004
+....................    i2c_start(); 
+013A:  BSF    20.4
+013B:  MOVF   20,W
+013C:  BSF    03.5
+013D:  MOVWF  07
+013E:  NOP
+013F:  BCF    03.5
+0140:  BSF    20.3
+0141:  MOVF   20,W
+0142:  BSF    03.5
+0143:  MOVWF  07
+0144:  NOP
+0145:  BCF    03.5
+0146:  BTFSS  07.3
+0147:  GOTO   146
+0148:  BCF    07.4
+0149:  BCF    20.4
+014A:  MOVF   20,W
+014B:  BSF    03.5
+014C:  MOVWF  07
+014D:  NOP
+014E:  BCF    03.5
+014F:  BCF    07.3
+0150:  BCF    20.3
+0151:  MOVF   20,W
+0152:  BSF    03.5
+0153:  MOVWF  07
+....................    i2c_write(0xD0);      // WR to RTC 
+0154:  MOVLW  D0
+0155:  BCF    03.5
+0156:  MOVWF  2B
+0157:  CALL   004
+....................    i2c_write(0x07);      // Control Register 
+0158:  MOVLW  07
+0159:  MOVWF  2B
+015A:  CALL   004
+....................    i2c_write(0x80);     // Disable squarewave output pin 
+015B:  MOVLW  80
+015C:  MOVWF  2B
+015D:  CALL   004
+....................    i2c_stop(); 
+015E:  BCF    20.4
+015F:  MOVF   20,W
+0160:  BSF    03.5
+0161:  MOVWF  07
+0162:  NOP
+0163:  BCF    03.5
+0164:  BSF    20.3
+0165:  MOVF   20,W
+0166:  BSF    03.5
+0167:  MOVWF  07
+0168:  BCF    03.5
+0169:  BTFSS  07.3
+016A:  GOTO   169
+016B:  NOP
+016C:  GOTO   16D
+016D:  NOP
+016E:  BSF    20.4
+016F:  MOVF   20,W
+0170:  BSF    03.5
+0171:  MOVWF  07
+0172:  NOP
+....................  
+.................... } 
+0173:  BCF    03.5
+0174:  BCF    0A.3
+0175:  BCF    0A.4
+0176:  GOTO   1B0 (RETURN)
+....................  
+.................... void ds1307_set_date_time(BYTE day, int8 mth, BYTE year, BYTE dow, BYTE hr, BYTE min, BYTE sec) 
+.................... { 
+....................   sec &= 0x7F; 
+....................   hr &= 0x3F; 
+....................  
+....................   i2c_start(); 
+....................   i2c_write(0xD0);            // I2C write address 
+....................   i2c_write(0x00);            // Start at REG 0 - Seconds 
+....................   i2c_write(bin2bcd(sec));      // REG 0 
+....................   i2c_write(bin2bcd(min));      // REG 1 
+....................   i2c_write(bin2bcd(hr));      // REG 2 
+....................   i2c_write(bin2bcd(dow));      // REG 3 
+....................   i2c_write(bin2bcd(day));      // REG 4 
+....................   i2c_write(bin2bcd(mth));      // REG 5 
+....................   i2c_write(bin2bcd(year));      // REG 6 
+....................   i2c_write(0x80);            // REG 7 - Disable squarewave output pin 
+....................   i2c_stop(); 
+.................... } 
+....................  
+.................... void ds1307_set_time(byte hr, byte min, byte sec) 
+.................... { 
+....................   sec &= 0x7F; 
+....................   hr &= 0x3F; 
+....................   i2c_start(); 
+....................   i2c_write(0xD0);            // I2C write address 
+....................   i2c_write(0x00);            // Start at REG 0 - Seconds 
+....................   i2c_write(bin2bcd(sec));      // REG 0 
+....................   i2c_write(bin2bcd(min));      // REG 1 
+....................   i2c_write(bin2bcd(hr));      // REG 2 
+....................   i2c_write(0x80);            // REG 7 - Disable squarewave output pin 
+....................   i2c_stop(); 
+.................... } 
+....................  
+.................... void ds1307_set_date(byte day, byte mth, byte year, byte dow) 
+.................... { 
+....................   
+....................   i2c_start(); 
+....................   i2c_write(0xD0);            // I2C write address 
+....................   i2c_write(0x03);            // Start at REG 0 - Seconds 
+....................   i2c_write(bin2bcd(dow)); 
+....................   i2c_write(bin2bcd(day)); 
+....................   i2c_write(bin2bcd(mth)); 
+....................   i2c_write(bin2bcd(year)); 
+....................   i2c_write(0x80);            // REG 7 - Disable squarewave output pin 
+....................   i2c_stop(); 
+.................... } 
+....................  
+.................... void ds1307_get_date(BYTE &day, BYTE &mth, BYTE &year, BYTE &dow) 
+.................... { 
+....................   i2c_start(); 
+....................   i2c_write(0xD0); 
+....................   i2c_write(0x03);            // Start at REG 3 - Day of week 
+....................   i2c_start(); 
+....................   i2c_write(0xD1); 
+....................   dow  = bcd2bin(i2c_read() & 0x7f);   // REG 3 
+....................   day  = bcd2bin(i2c_read() & 0x3f);   // REG 4 
+....................   mth  = bcd2bin(i2c_read() & 0x1f);   // REG 5 
+....................   year = bcd2bin(i2c_read(0));            // REG 6 
+....................   i2c_stop(); 
+.................... } 
+....................  
+.................... void ds1307_get_time(BYTE &hr, BYTE &min, BYTE &sec) 
+.................... { 
+....................   i2c_start(); 
+*
+01B3:  BSF    20.4
+01B4:  MOVF   20,W
+01B5:  BSF    03.5
+01B6:  MOVWF  07
+01B7:  NOP
+01B8:  BCF    03.5
+01B9:  BSF    20.3
+01BA:  MOVF   20,W
+01BB:  BSF    03.5
+01BC:  MOVWF  07
+01BD:  NOP
+01BE:  BCF    03.5
+01BF:  BCF    07.4
+01C0:  BCF    20.4
+01C1:  MOVF   20,W
+01C2:  BSF    03.5
+01C3:  MOVWF  07
+01C4:  NOP
+01C5:  BCF    03.5
+01C6:  BCF    07.3
+01C7:  BCF    20.3
+01C8:  MOVF   20,W
+01C9:  BSF    03.5
+01CA:  MOVWF  07
+....................   i2c_write(0xD0); 
+01CB:  MOVLW  D0
+01CC:  BCF    03.5
+01CD:  MOVWF  2B
+01CE:  CALL   004
+....................   i2c_write(0x00);            // Start at REG 0 - Seconds 
+01CF:  CLRF   2B
+01D0:  CALL   004
+....................   i2c_start(); 
+01D1:  BSF    20.4
+01D2:  MOVF   20,W
+01D3:  BSF    03.5
+01D4:  MOVWF  07
+01D5:  NOP
+01D6:  BCF    03.5
+01D7:  BSF    20.3
+01D8:  MOVF   20,W
+01D9:  BSF    03.5
+01DA:  MOVWF  07
+01DB:  NOP
+01DC:  BCF    03.5
+01DD:  BTFSS  07.3
+01DE:  GOTO   1DD
+01DF:  BCF    07.4
+01E0:  BCF    20.4
+01E1:  MOVF   20,W
+01E2:  BSF    03.5
+01E3:  MOVWF  07
+01E4:  NOP
+01E5:  BCF    03.5
+01E6:  BCF    07.3
+01E7:  BCF    20.3
+01E8:  MOVF   20,W
+01E9:  BSF    03.5
+01EA:  MOVWF  07
+....................   i2c_write(0xD1); 
+01EB:  MOVLW  D1
+01EC:  BCF    03.5
+01ED:  MOVWF  2B
+01EE:  CALL   004
+....................   sec = bcd2bin(i2c_read() & 0x7f); 
+01EF:  MOVLW  01
+01F0:  MOVWF  77
+01F1:  CALL   04E
+01F2:  MOVF   78,W
+01F3:  ANDLW  7F
+01F4:  MOVWF  28
+01F5:  MOVWF  2C
+01F6:  CALL   093
+01F7:  MOVF   78,W
+01F8:  MOVWF  27
+....................   min = bcd2bin(i2c_read() & 0x7f); 
+01F9:  MOVLW  01
+01FA:  MOVWF  77
+01FB:  CALL   04E
+01FC:  MOVF   78,W
+01FD:  ANDLW  7F
+01FE:  MOVWF  28
+01FF:  MOVWF  2C
+0200:  CALL   093
+0201:  MOVF   78,W
+0202:  MOVWF  26
+....................   hr  = bcd2bin(i2c_read(0) & 0x3f); 
+0203:  CLRF   77
+0204:  CALL   04E
+0205:  MOVF   78,W
+0206:  ANDLW  3F
+0207:  MOVWF  28
+0208:  MOVWF  2C
+0209:  CALL   093
+020A:  MOVF   78,W
+020B:  MOVWF  25
+....................   i2c_stop(); 
+020C:  BCF    20.4
+020D:  MOVF   20,W
+020E:  BSF    03.5
+020F:  MOVWF  07
+0210:  NOP
+0211:  BCF    03.5
+0212:  BSF    20.3
+0213:  MOVF   20,W
+0214:  BSF    03.5
+0215:  MOVWF  07
+0216:  BCF    03.5
+0217:  BTFSS  07.3
+0218:  GOTO   217
+0219:  NOP
+021A:  GOTO   21B
+021B:  NOP
+021C:  BSF    20.4
+021D:  MOVF   20,W
+021E:  BSF    03.5
+021F:  MOVWF  07
+0220:  NOP
+....................  
+.................... } 
+....................  
+....................  
+....................    
+.................... //#use rs232(baud=9600, xmit=PIN_C6,rcv=PIN_C7) 
+....................  
+.................... #byte TRISA=0x85 
+.................... #byte PORTA=0x05 
+.................... #byte TRISB=0x86 
+.................... #byte PORTB=0x06 
+.................... #byte TRISE=0x89 
+.................... #byte PORTE=0x09 
+.................... #BYTE TRISD=0X88 
+.................... #BYTE PORTD=0x08 
+.................... #BYTE PORTC=0X07 
+.................... #BYTE TRISC=0X87 
+....................  
+.................... #bit relay=0x08.3 
+.................... #bit toggle_sw=0x06.5 
+.................... #bit mode_SW1=0X06.6 
+.................... #bit mode_SW2=0X06.7 
+....................  
+.................... int8 shh=18,smm=30,ehh=21,emm=30; 
+*
+019A:  MOVLW  12
+019B:  MOVWF  21
+019C:  MOVLW  1E
+019D:  MOVWF  22
+019E:  MOVLW  15
+019F:  MOVWF  23
+01A0:  MOVLW  1E
+01A1:  MOVWF  24
+....................  
+.................... //!int validateTime(int chh, int cmm) 
+.................... //!{ 
+.................... //! 
+.................... //!  if(((chh>=shh) && ((((chh)*60)+cmm)>=(((shh)*60)+smm))) && ((chh<=ehh) && ((((chh)*60)+(cmm+1))<=(((ehh)*60)+emm)))) 
+.................... //! 
+.................... //!    return 1; 
+.................... //!    else  
+.................... //!    return 0; 
+.................... //!} 
+.................... //! 
+.................... //! 
+.................... void main() 
+.................... { 
+*
+018C:  CLRF   04
+018D:  BCF    03.7
+018E:  MOVLW  1F
+018F:  ANDWF  03,F
+0190:  BSF    03.5
+0191:  BSF    1F.0
+0192:  BSF    1F.1
+0193:  BSF    1F.2
+0194:  BCF    1F.3
+0195:  MOVLW  07
+0196:  MOVWF  1C
+....................    int8 hr,min,sec; 
+....................    TRISA=0x00; 
+*
+01A2:  BSF    03.5
+01A3:  CLRF   05
+....................    TRISB=0x00; 
+01A4:  CLRF   06
+....................    TRISC=0x00; 
+01A5:  CLRF   07
+....................    TRISD=0x00; 
+01A6:  CLRF   08
+....................    TRISE=0x00; 
+01A7:  CLRF   09
+....................     
+....................    PORTA=0x00; 
+01A8:  BCF    03.5
+01A9:  CLRF   05
+....................    PORTB=0xf0; 
+01AA:  MOVLW  F0
+01AB:  MOVWF  06
+....................    PORTC=0x00; 
+01AC:  CLRF   07
+....................    PORTD=0x00; 
+01AD:  CLRF   08
+....................    PORTE=0x00; 
+01AE:  CLRF   09
+....................  
+....................    ds1307_init(); 
+01AF:  GOTO   0A6
+.................... //!   ds1307_set_time(20,43,0); 
+....................    delay_ms(100); 
+01B0:  MOVLW  64
+01B1:  MOVWF  29
+01B2:  CALL   177
+....................  
+....................    while(1) 
+....................    { 
+....................       ds1307_get_time(hr,min,sec); 
+....................       delay_ms(100); 
+*
+0221:  MOVLW  64
+0222:  BCF    03.5
+0223:  MOVWF  29
+0224:  CALL   177
+....................       if((mode_SW1==1) && (mode_SW2==1)) 
+0225:  BTFSS  06.6
+0226:  GOTO   234
+0227:  BTFSS  06.7
+0228:  GOTO   234
+....................       { 
+....................          if(toggle_sw==0) 
+0229:  BTFSC  06.5
+022A:  GOTO   234
+....................          { 
+....................          relay=~relay; 
+022B:  MOVLW  08
+022C:  XORWF  08,F
+....................          delay_ms(500); 
+022D:  MOVLW  02
+022E:  MOVWF  28
+022F:  MOVLW  FA
+0230:  MOVWF  29
+0231:  CALL   177
+0232:  DECFSZ 28,F
+0233:  GOTO   22F
+....................          } 
+....................       } 
+....................       if(mode_SW1==0) 
+0234:  BTFSC  06.6
+0235:  GOTO   241
+....................       { 
+....................          if(hr>=18 && hr<=21)  
+0236:  MOVF   25,W
+0237:  SUBLW  11
+0238:  BTFSC  03.0
+0239:  GOTO   240
+023A:  MOVF   25,W
+023B:  SUBLW  15
+023C:  BTFSS  03.0
+023D:  GOTO   240
+....................          { 
+....................             relay=1; 
+023E:  BSF    08.3
+....................          } 
+....................          else 
+023F:  GOTO   241
+....................          { 
+....................             relay=0; 
+0240:  BCF    08.3
+....................          } 
+....................       } 
+....................      if(mode_SW2==0) 
+0241:  BTFSC  06.7
+0242:  GOTO   262
+....................       { 
+....................          if(hr==18 && min>=30) 
+0243:  MOVF   25,W
+0244:  SUBLW  12
+0245:  BTFSS  03.2
+0246:  GOTO   24D
+0247:  MOVF   26,W
+0248:  SUBLW  1D
+0249:  BTFSC  03.0
+024A:  GOTO   24D
+....................          { 
+....................            relay=1; 
+024B:  BSF    08.3
+....................          }   
+....................          else if(hr>=19 && hr<=20) 
+024C:  GOTO   262
+024D:  MOVF   25,W
+024E:  SUBLW  12
+024F:  BTFSC  03.0
+0250:  GOTO   257
+0251:  MOVF   25,W
+0252:  SUBLW  14
+0253:  BTFSS  03.0
+0254:  GOTO   257
+....................            { 
+....................            relay=1; 
+0255:  BSF    08.3
+....................            } 
+....................          else if(hr==21 && min<=29 ) 
+0256:  GOTO   262
+0257:  MOVF   25,W
+0258:  SUBLW  15
+0259:  BTFSS  03.2
+025A:  GOTO   261
+025B:  MOVF   26,W
+025C:  SUBLW  1D
+025D:  BTFSS  03.0
+025E:  GOTO   261
+....................             { 
+....................             relay=1; 
+025F:  BSF    08.3
+....................             } 
+....................           else 
+0260:  GOTO   262
+....................           relay=0; 
+0261:  BCF    08.3
+....................            
+....................       } 
+....................        
+....................        
+....................    } 
+0262:  GOTO   1B3
+....................        
+.................... } 
+....................  
+0263:  SLEEP
+
+Configuration Fuses:
+   Word  1: 1F71   XT NOWDT PUT PROTECT NODEBUG BROWNOUT NOLVP NOCPD NOWRT
